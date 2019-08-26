@@ -1,1 +1,1 @@
-<annotation><filename>323.jpg</filename><size><width>1024</width><height>1190</height></size><object><name>number_plate</name><bndbox><xmin>456.545994065</xmin><ymin>272.629227824</ymin><xmax>713.305637982</xmax><ymax>328.066368858</ymax></bndbox></object></annotation>
+<annotation><filename>323.jpg</filename><size><width>1024</width><height>1190</height></size><object><name>number_plate</name><bndbox><xmin>456</xmin><ymin>272</ymin><xmax>713</xmax><ymax>328</ymax></bndbox></object></annotation>

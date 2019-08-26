@@ -1,1 +1,1 @@
-[{"name": "number_plate", "bndbox": {"xmin": 450.0, "ymin": 277.0, "xmax": 568.0, "ymax": 356.0}}]
+[{"name": "number_plate", "bndbox": {"xmin": 450, "ymin": 277, "xmax": 568, "ymax": 355}}]

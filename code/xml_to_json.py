@@ -14,14 +14,14 @@ def keep_keys(old_dict):
 
 
 parser = argparse.ArgumentParser(description='Convert xml Annotations to json annotations')
-parser.add_argument('--xml', type=str,  metavar='path/to/input/xml/', default='annotations/xmls/', help='(default "annotations/xml/") path to xml annotations')
-parser.add_argument('--json', type=str,  metavar='path/to/output/json/', default='annotations/json/', help='(default "annotations/json/") path to out json annotations')
+parser.add_argument('--xml', type=str,  metavar='path/to/input/xml/', default='../annotations/xmls/', help='(default "annotations/xml/") path to xml annotations')
+parser.add_argument('--json', type=str,  metavar='path/to/output/json/', default='../annotations/json/', help='(default "annotations/json/") path to out json annotations')
 
 parser.print_help()
-print "\n"
+print("\n")
 
 args = vars(parser.parse_args())
-print args
+print(args)
 
 input_directory = args["xml"]
 output_directory = args["json"]
@@ -44,5 +44,5 @@ for xml_file in tqdm(xml_input_files):
     json_output = '['+json_output+']'
   f.write(json_output)
   f.close()
-print "\n\n\n"
-print "Completed Parsing"
+print("\n\n\n")
+print("Completed Parsing")

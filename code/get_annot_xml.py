@@ -15,31 +15,21 @@ urls = df['content'].values
 
 for i,a in enumerate(annot):
 
-	x = {}
-
-	x['name'] = a['label'][0]
-
 	w = a['imageWidth']
 	h = a['imageHeight']
-
-	x['bndbox'] = {}
-	x['bndbox']['xmin'] = a['points'][0]['x'] * w
-	x['bndbox']['ymin'] = a['points'][0]['y'] * h
-	x['bndbox']['xmax'] = a['points'][1]['x'] * w
-	x['bndbox']['ymax'] = a['points'][1]['y'] * h
 
 	root = ET.Element('annotation')
 	filename = ET.SubElement(root, 'filename').text = '{}.jpg'.format(i)
 	size = ET.SubElement(root, 'size')
-	ET.SubElement(size, "width").text = str(w)
-	ET.SubElement(size, "height").text = str(h)
+	ET.SubElement(size, "width").text = str(int(w))
+	ET.SubElement(size, "height").text = str(int(h))
 	obj = ET.SubElement(root, 'object')
 	ET.SubElement(obj, 'name').text = a['label'][0]
 	bndbox = ET.SubElement(obj, 'bndbox')
-	ET.SubElement(bndbox, 'xmin').text = str(a['points'][0]['x'] * w)
-	ET.SubElement(bndbox, 'ymin').text = str(a['points'][0]['y'] * h)
-	ET.SubElement(bndbox, 'xmax').text = str(a['points'][1]['x'] * w)
-	ET.SubElement(bndbox, 'ymax').text = str(a['points'][1]['y'] * h)
+	ET.SubElement(bndbox, 'xmin').text = str(int(a['points'][0]['x'] * w))
+	ET.SubElement(bndbox, 'ymin').text = str(int(a['points'][0]['y'] * h))
+	ET.SubElement(bndbox, 'xmax').text = str(int(a['points'][1]['x'] * w))
+	ET.SubElement(bndbox, 'ymax').text = str(int(a['points'][1]['y'] * h))
 
 	tree = ET.ElementTree(root)
 	tree.write('../annotations/xmls/{}.xml'.format(i))
@@ -47,4 +37,4 @@ for i,a in enumerate(annot):
 	# with open('annotations/json/{}.json'.format(i), 'wb') as f:
 	# 	json.dump([x], f, separators=(",", ":"))
 
-	# urllib.urlretrieve(urls[i], 'images/{}.jpg'.format(i))
+	urllib.urlretrieve(urls[i], '../images/{}.jpg'.format(i))
