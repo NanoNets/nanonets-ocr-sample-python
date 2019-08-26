@@ -11,7 +11,8 @@ for root, dirs, files in os.walk(pathToAnnotations, topdown=False):
         annotation = open(os.path.join(root, name), "r")
         filePath = os.path.join(root, name)
         imageName, ext = name.split(".")
-        print(imageName)
+        if imageName == "":
+            continue
         imagePath = os.path.join(pathToImages, imageName + '.jpg')
         jsonData = annotation.read()
         url = 'https://app.nanonets.com/api/v2/ObjectDetection/Model/' + model_id + '/UploadFile/'
