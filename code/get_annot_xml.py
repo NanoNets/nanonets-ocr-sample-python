@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import xml.etree.cElementTree as ET
 
-file = '../Indian_Number_plates.json'
+file = '../data/indian_number_plates.json'
 df = pd.read_json(file, lines=True)
 
 df.dropna(subset=['annotation'], inplace=True)
@@ -34,7 +34,4 @@ for i,a in enumerate(annot):
 	tree = ET.ElementTree(root)
 	tree.write('../annotations/xmls/{}.xml'.format(i))
 
-	# with open('annotations/json/{}.json'.format(i), 'wb') as f:
-	# 	json.dump([x], f, separators=(",", ":"))
-
-	urllib.urlretrieve(urls[i], '../images/{}.jpg'.format(i))
+	# urllib.urlretrieve(urls[i], '../images/{}.jpg'.format(i))
