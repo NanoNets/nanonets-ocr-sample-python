@@ -1,8 +1,8 @@
 import os, requests, json
 from tqdm import tqdm
 
-pathToAnnotations = '../annotations/json'
-pathToImages = '../images'
+pathToAnnotations = './annotations/json'
+pathToImages = './images'
 model_id = os.environ.get('NANONETS_MODEL_ID')
 api_key = os.environ.get('NANONETS_API_KEY')
 
