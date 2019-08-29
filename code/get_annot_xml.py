@@ -1,9 +1,10 @@
+import os
 import urllib
 import json
 import pandas as pd
 import xml.etree.cElementTree as ET
 
-file = '../data/indian_number_plates.json'
+file = './data/indian_number_plates.json'
 df = pd.read_json(file, lines=True)
 
 df.dropna(subset=['annotation'], inplace=True)
@@ -32,6 +33,15 @@ for i,a in enumerate(annot):
 	ET.SubElement(bndbox, 'ymax').text = str(int(a['points'][1]['y'] * h))
 
 	tree = ET.ElementTree(root)
-	tree.write('../annotations/xmls/{}.xml'.format(i))
 
-	# urllib.urlretrieve(urls[i], '../images/{}.jpg'.format(i))
+	if not os.path.exists('./annotations/xmls'):
+		os.makedirs('./annotations/xmls')
+
+	file = './annotations/xmls/{}.xml'.format(i)
+	with open(file, 'wb') as f:	
+		tree.write(f, encoding='utf-8')
+
+	# if not os.path.exists('./images'):
+	# 	os.makedirs('./images')
+
+	# urllib.urlretrieve(urls[i], './images/{}.jpg'.format(i))
