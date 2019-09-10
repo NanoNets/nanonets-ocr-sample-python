@@ -22,7 +22,11 @@ Annotations include bounding boxes for each image and have the same name as the 
 >**Note:** Make sure you have python and pip installed on your system if you don't visit
 [Python](https://www.python.org/downloads/release/python-2714/)
 [pip](https://pip.pypa.io/en/stable/installing/)
- 
+
+<div align="center">
+    <img src="https://drive.google.com/file/d/17mRRjVEodzbDZuGemO1nuTX4t_ESLOyR/view?usp=sharing" alt="number-plate-detection-gif"/>
+</div>
+
 ### Step 1: Clone the Repo, Install dependencies
 ```bash
 git clone https://github.com/NanoNets/nanonets-ocr-sample-python.git
