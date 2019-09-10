@@ -24,7 +24,7 @@ Annotations include bounding boxes for each image and have the same name as the 
 [pip](https://pip.pypa.io/en/stable/installing/)
 
 <div align="center">
-    <img src="https://drive.google.com/file/d/17mRRjVEodzbDZuGemO1nuTX4t_ESLOyR/view?usp=sharing" alt="number-plate-detection-gif"/>
+    <img src="https://github.com/NanoNets/nanonets-ocr-sample-python/demo/results.gif" alt="number-plate-detection-gif"/>
 </div>
 
 ### Step 1: Clone the Repo, Install dependencies
