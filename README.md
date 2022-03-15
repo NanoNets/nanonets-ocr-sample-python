@@ -85,3 +85,6 @@ python ./code/prediction.py ./images/151.jpg
 
 
 *Note the python sample uses the converted json instead of the xml payload for convenience purposes, hence it has no dependencies.*
+
+### Nanonets PDF to CSV 
+We've recently launched a tool that lets you easily convert PDFs to CSVs from [here](https://nanonets.com/convert-pdf-to-csv)
